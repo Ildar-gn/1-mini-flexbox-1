@@ -24,6 +24,8 @@ body {
 	border-radius: 12px;
 	max-width: 1440px;
 	margin: 0 auto;
+  flex-wrap: wrap;
+  gap: 30px;
 }
 
 .card__name {
@@ -48,7 +50,7 @@ body {
 
 .card__stats {
 	display: flex;
-	gap: 0 24px;
+	gap: 15px 24px;
 }
 
 .card__stat {
@@ -68,4 +70,51 @@ body {
 	font-weight: 600;
 	font-size: 20px;
 	line-height: 120%;
+}
+
+@media screen and (max-width: 1003px) {
+  .card__stats {
+    flex: 0 1 80%;
+    justify-content: space-between;
+  }
+
+  .card__stat {
+    flex-shrink: 0;
+  }
+
+}
+
+@media screen and (max-width: 600px) {
+  .card__stats {
+    flex-wrap: wrap;
+    flex: 1;
+  }
+
+  .card__stat {
+    flex: 0 1 calc(100% / 2 - 12px);
+  }
+}
+
+@media screen and (max-width: 355px) {
+  .card {
+    padding: 32px 18px;
+  }
+
+  .card__stats {
+    gap: 14px;
+  }
+
+  .card__stat {
+    flex: 0 1 calc(100% / 2 - 24px);
+  }
+}
+
+@media screen and (max-width: 288px) {
+  .card__stats {
+    justify-content: center;
+  }
+
+  .card__stat {
+    flex: 0 1 100%;
+  }
 }
